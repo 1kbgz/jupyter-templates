@@ -88,13 +88,8 @@ ignore = [
     ".copier-answers.yaml",
     "js/pnpm-lock.yaml",
     "Makefile",
-<<<<<<< before updating
     ".vscode/**",
     "binder/**",
-    "jupyter_templates/extension/**",
-=======
-    ".vscode/*",
->>>>>>> after updating
     "jupyter_templates/labextension/**",
     "jupyter_templates/nbextension/**",
     "docs/**/*",

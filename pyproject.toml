@@ -1,9 +1,5 @@
 [build-system]
-requires = [
-    "hatchling",
-    "hatch-jupyter-builder",
-    "jupyterlab>=4,<5",
-]
+requires = ["hatchling", "hatch-js", "jupyterlab>=4,<5"]
 build-backend="hatchling.build"
 
 [project]
@@ -38,8 +34,8 @@ develop = [
     "build",
     "bump-my-version",
     "check-manifest",
-    "hatch-jupyter-builder",
     "codespell>=2.4,<2.5",
+    "hatch-js",
     "hatchling",
     "mdformat>=0.7.22,<0.8",
     "mdformat-tables>=1",
@@ -88,8 +84,9 @@ ignore = [
     ".copier-answers.yaml",
     "js/pnpm-lock.yaml",
     "Makefile",
-    ".vscode/**",
+    ".vscode/*",
     "binder/**",
+    "jupyter_templates/extension/**",
     "jupyter_templates/labextension/**",
     "jupyter_templates/nbextension/**",
     "docs/**/*",
@@ -148,24 +145,15 @@ exclude = [
 "jupyter_templates/extension/jupyter_templates.json" = "etc/jupyter/jupyter_server_config.d/jupyter_templates.json"
 "jupyter_templates/extension/notebook_templates" = "share/jupyter/notebook"
 
-[tool.hatch.build.hooks.jupyter-builder]
-build-function = "hatch_jupyter_builder.npm_builder"
-ensured-targets = [
-    "jupyter_templates/nbextension/static/main.js",
-    "jupyter_templates/labextension/package.json",
-]
-skip-if-exists = [
-    "jupyter_templates/nbextension/static/main.js",
-    "jupyter_templates/labextension/package.json",
-]
-dependencies = [
-    "hatch-jupyter-builder",
-]
-
-[tool.hatch.build.hooks.jupyter-builder.build-kwargs]
+[tool.hatch.build.hooks.hatch-js]
 path = "js"
+install_cmd = "install"
 build_cmd = "build"
-npm = "pnpm"
+tool = "pnpm"
+targets = [
+    "jupyter_templates/nbextension/static/main.js",
+    "jupyter_templates/labextension/package.json",
+]
 
 [tool.pytest.ini_options]
 addopts = ["-vvv", "--junitxml=junit.xml"]

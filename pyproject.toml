@@ -84,13 +84,9 @@ ignore = [
     ".copier-answers.yaml",
     "js/pnpm-lock.yaml",
     "Makefile",
-<<<<<<< before updating
-    ".vscode/**",
-    "binder/**",
-=======
     ".vscode/*",
+    "binder/**",
     "jupyter_templates/extension/**",
->>>>>>> after updating
     "jupyter_templates/labextension/**",
     "jupyter_templates/nbextension/**",
     "docs/**/*",
@@ -149,24 +145,13 @@ exclude = [
 "jupyter_templates/extension/jupyter_templates.json" = "etc/jupyter/jupyter_server_config.d/jupyter_templates.json"
 "jupyter_templates/extension/notebook_templates" = "share/jupyter/notebook"
 
-<<<<<<< before updating
-[tool.hatch.build.hooks.jupyter-builder]
-build-function = "hatch_jupyter_builder.npm_builder"
-ensured-targets = [
-    "jupyter_templates/nbextension/static/main.js",
-    "jupyter_templates/labextension/package.json",
-]
-skip-if-exists = [
-    "jupyter_templates/nbextension/static/main.js",
-=======
 [tool.hatch.build.hooks.hatch-js]
 path = "js"
 install_cmd = "install"
 build_cmd = "build"
 tool = "pnpm"
 targets = [
-    "jupyter_templates/nbextension/static/notebook.js",
->>>>>>> after updating
+    "jupyter_templates/nbextension/static/main.js",
     "jupyter_templates/labextension/package.json",
 ]
 

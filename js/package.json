@@ -48,7 +48,7 @@
     "@jupyterlab/launcher": "^4.4.9",
     "@jupyterlab/mainmenu": "^4.4.9",
     "@jupyterlab/notebook": "^4.4.9",
-    "@jupyterlab/services": "^7.4.9",
+    "@jupyterlab/services": "^7.4.10",
     "@lumino/disposable": "^2.1.4"
   },
   "devDependencies": {

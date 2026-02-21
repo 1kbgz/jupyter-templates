@@ -82,29 +82,11 @@ filename = "js/package.json"
 search = '"version": "{current_version}"'
 replace = '"version": "{new_version}"'
 
-<<<<<<< before updating
 [[tool.bumpversion.files]]
 filename = "binder/requirements.txt"
 search = "jupyter-templates=={current_version}"
 replace = "jupyter-templates=={new_version}"
 
-[tool.check-manifest]
-ignore = [
-    ".copier-answers.yaml",
-    "js/pnpm-lock.yaml",
-    "Makefile",
-    ".vscode/*",
-    "binder/**",
-    "jupyter_templates/extension/**",
-    "jupyter_templates/labextension/**",
-    "jupyter_templates/nbextension/**",
-    "docs/**/*",
-    "js/dist/**/*",
-    "js/lib/**/*",
-]
-
-=======
->>>>>>> after updating
 [tool.coverage.run]
 branch = true
 omit = [
@@ -134,17 +116,10 @@ packages = [
     "js",
 ]
 exclude = [
-<<<<<<< before updating
-    "/.github",
-    "/.vscode",
-    "/binder",
-    "/docs",
-    "/js/dist",
-    "/js/node_modules",
-=======
+    "binder",
+    "docs",
     "js/dist",
     "js/node_modules",
->>>>>>> after updating
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -152,15 +127,9 @@ packages = [
     "jupyter_templates",
 ]
 exclude = [
-<<<<<<< before updating
-    "/.github",
-    "/.vscode",
-    "/binder",
-    "/docs",
-    "/js",
-=======
-    "js"
->>>>>>> after updating
+    "binder",
+    "docs",
+    "js",
 ]
 
 [tool.hatch.build.targets.wheel.shared-data]

@@ -139,7 +139,7 @@ exclude = [
 
 "jupyter_templates/nbextension/static" = "share/jupyter/nbextensions/jupyter-templates"
 
-"jupyter_templates/extension/notebook_templates" = "share/jupyter/notebook"
+"jupyter_templates/templates/notebook_templates" = "share/jupyter/notebook"
 
 [tool.hatch.build.hooks.hatch-js]
 path = "js"

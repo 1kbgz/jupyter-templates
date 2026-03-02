@@ -47,7 +47,7 @@
     "@jupyterlab/apputils": "^4.6.3",
     "@jupyterlab/filebrowser": "^4.5.3",
     "@jupyterlab/launcher": "^4.5.3",
-    "@jupyterlab/mainmenu": "^4.5.3",
+    "@jupyterlab/mainmenu": "^4.5.5",
     "@jupyterlab/notebook": "^4.5.3",
     "@jupyterlab/services": "^7.5.3",
     "@lumino/disposable": "^2.1.5"

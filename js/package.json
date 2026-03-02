@@ -43,7 +43,7 @@
     "test": "jest --coverage --collectCoverageFrom=src/*.{js}"
   },
   "dependencies": {
-    "@jupyterlab/application": "^4.5.3",
+    "@jupyterlab/application": "^4.5.5",
     "@jupyterlab/apputils": "^4.6.3",
     "@jupyterlab/filebrowser": "^4.5.3",
     "@jupyterlab/launcher": "^4.5.3",

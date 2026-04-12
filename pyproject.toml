@@ -36,7 +36,11 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
 ]
 
-dependencies = []
+dependencies = [
+    "jupyter_core",
+    "jupyter_server>=2",
+    "tornado",
+]
 
 [project.optional-dependencies]
 develop = [

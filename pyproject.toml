@@ -38,7 +38,7 @@ classifiers = [
 
 dependencies = [
     "jupyter_core",
-    "jupyter_server>=2",
+    "jupyter_server>=2.17.0",
     "tornado",
 ]
 

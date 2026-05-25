@@ -56,17 +56,10 @@
     "@babel/cli": "^7.28.6",
     "@babel/core": "^7.29.0",
     "@babel/eslint-parser": "^7.28.6",
-<<<<<<< before updating
     "@babel/preset-env": "^7.29.5",
     "@jupyterlab/builder": "^4.5.7",
     "babel-jest": "^30.4.1",
     "cpy-cli": "^7.0.0",
-=======
-    "@babel/preset-env": "^7.29.2",
-    "@jupyterlab/builder": "^4.5.6",
-    "babel-jest": "^30.4.1",
-    "cpy-cli": "^6.0.0",
->>>>>>> after updating
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",

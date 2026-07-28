@@ -6,5 +6,5 @@
 # the Apache License 2.0.  The full license can be found in the LICENSE file.
 #
 # for Coverage
-from jupyter_templates import *  # noqa: F401, F403
-from jupyter_templates.extension import *  # noqa: F401, F403
+from jupyter_templates import *
+from jupyter_templates.extension import *

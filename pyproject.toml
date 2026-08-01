@@ -2,7 +2,7 @@
 requires = [
     "hatchling",
     "hatch-js",
-    "jupyterlab>=4.6.0,<5",
+    "jupyterlab>=4.6.2,<5",
 ]
 build-backend = "hatchling.build"
 
@@ -51,7 +51,7 @@ develop = [
     "hatchling",
     "mdformat",
     "mdformat-tables>=1",
-    "jupyterlab>=4.6.0,<5",
+    "jupyterlab>=4.6.2,<5",
     "pytest",
     "pytest-cov",
     "ruff",

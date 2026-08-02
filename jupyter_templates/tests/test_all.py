@@ -1,4 +1,3 @@
-<<<<<<< before updating
 # *****************************************************************************
 #
 # Copyright (c) 2024, the jupyter_templates authors.
@@ -9,10 +8,3 @@
 # for Coverage
 from jupyter_templates import *
 from jupyter_templates.extension import *
-=======
-from jupyter_templates import *
-
-
-def test_all():
-    assert True
->>>>>>> after updating

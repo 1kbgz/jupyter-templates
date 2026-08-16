@@ -20,7 +20,6 @@ import {Widget} from "@lumino/widgets";
 
 import "../style/index.css";
 
-<<<<<<< before updating
 let templates;
 
 export class OpenTemplateWidget extends Widget {
@@ -148,11 +147,6 @@ async function activate(app, menu, browser, launcher) {
 
   // eslint-disable-next-line no-console
   console.log("JupyterLab extension jupyter_templates is activated!");
-=======
-async function activate(_app) {
-  // oxlint-disable-next-line no-console
-  console.log("JupyterLab extension jupyter-templates is activated!");
->>>>>>> after updating
 }
 
 const extension = {

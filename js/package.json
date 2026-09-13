@@ -33,7 +33,7 @@
     "build:babel": "babel src/ --source-maps --out-dir lib/",
     "build:extension": "mkdirp ../jupyter_templates/extension/ && cpy --flat 'src/extension/*' '../jupyter_templates/extension/'",
     "build:nbextension": "mkdirp ../jupyter_templates/nbextension/static/ && cpy --flat 'src/notebook/main.js' '../jupyter_templates/nbextension/static/' && cpy --flat 'style/icon.svg' '../jupyter_templates/nbextension/static/'",
-    "build:labextension": "rimraf ../jupyter_templates/labextension && jupyter labextension build .",
+    "build:labextension": "rimraf ../jupyter_templates/labextension && jupyter-builder build .",
     "build": "pnpm clean && pnpm build:babel && pnpm build:extension && pnpm build:labextension && pnpm build:nbextension",
     "clean": "rimraf lib",
     "fix": "oxlint --fix src/ tests/ && oxfmt --write \"src/**/*.js\" \"tests/**/*.js\"",
@@ -56,9 +56,11 @@
     "@babel/cli": "^8.0.4",
     "@babel/core": "^8.0.1",
     "@babel/preset-env": "^8.0.2",
-    "@jupyterlab/builder": "^4.5.10",
+    "@jupyter/builder": "^1.2.3",
+    "@jupyterlab/core-meta": "^4.6.3",
     "babel-jest": "^30.5.1",
     "cpy-cli": "^7.0.0",
+    "css-loader": "^7.1.4",
     "isomorphic-fetch": "^3.0.0",
     "jest": "^30.5.1",
     "jest-environment-jsdom": "^30.5.1",
@@ -67,6 +69,7 @@
     "mkdirp": "^3.0.1",
     "oxfmt": "^0.66.0",
     "oxlint": "^1.81.0",
-    "rimraf": "^6.1.3"
+    "rimraf": "^6.1.3",
+    "style-loader": "^4.0.0"
   }
 }

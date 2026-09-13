@@ -32,13 +32,8 @@
   "scripts": {
     "build:babel": "babel src/ --source-maps --out-dir lib/",
     "build:extension": "mkdirp ../jupyter_templates/extension/ && cpy --flat 'src/extension/*' '../jupyter_templates/extension/'",
-<<<<<<< before updating
     "build:nbextension": "mkdirp ../jupyter_templates/nbextension/static/ && cpy --flat 'src/notebook/main.js' '../jupyter_templates/nbextension/static/' && cpy --flat 'style/icon.svg' '../jupyter_templates/nbextension/static/'",
-    "build:labextension": "rimraf ../jupyter_templates/labextension && jupyter labextension build .",
-=======
-    "build:nbextension": "mkdirp ../jupyter_templates/nbextension/static/ && cpy --flat 'src/notebook.js' '../jupyter_templates/nbextension/static/'",
     "build:labextension": "rimraf ../jupyter_templates/labextension && jupyter-builder build .",
->>>>>>> after updating
     "build": "pnpm clean && pnpm build:babel && pnpm build:extension && pnpm build:labextension && pnpm build:nbextension",
     "clean": "rimraf lib",
     "fix": "oxlint --fix src/ tests/ && oxfmt --write \"src/**/*.js\" \"tests/**/*.js\"",

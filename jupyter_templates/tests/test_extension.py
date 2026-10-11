@@ -8,10 +8,31 @@
 # for Coverage
 from unittest.mock import MagicMock
 
-from jupyter_templates.extension import _load_jupyter_server_extension, load_jupyter_server_extension
+import pytest
+
+from jupyter_templates.extension import TemplateNamesHandler, TemplatesHandler, _load_jupyter_server_extension, load_jupyter_server_extension
 
 
 class TestExtension:
+    @pytest.mark.parametrize("handler_type", [TemplatesHandler, TemplateNamesHandler])
+    def test_handler_requires_loader(self, handler_type):
+        handler = object.__new__(handler_type)
+        with pytest.raises(ValueError, match="template loader"):
+            handler.initialize()
+        loader = MagicMock()
+        handler.initialize(loader=loader)
+        assert handler.loader is loader
+
+    def test_template_names(self, monkeypatch):
+        handler = object.__new__(TemplateNamesHandler)
+        loader = MagicMock(template_label="Notebook")
+        loader.get_templates.return_value = ({"examples": [{"name": "Example.ipynb"}]}, {})
+        handler.initialize(loader)
+        finish = MagicMock()
+        monkeypatch.setattr(handler, "finish", finish)
+        handler.get()
+        finish.assert_called_once_with('{"templates": {"examples": [{"name": "Example.ipynb"}]}, "template_label": "Notebook"}')
+
     def test_load_jupyter_server_extension(self):
         m = MagicMock()
 

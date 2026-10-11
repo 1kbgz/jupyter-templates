@@ -86,11 +86,13 @@ class TemplatesLoader:
 
 
 class TemplatesHandler(JupyterHandler):
-    def initialize(self, loader):
+    def initialize(self, loader=None):
+        if loader is None:
+            raise ValueError("A template loader is required")
         self.loader = loader
 
     @tornado.web.authenticated
-    def get(self):
+    def get(self, *args, **kwargs):
         temp = self.get_argument("template", "")
         if temp:
             self.finish(self.loader.get_templates()[1][temp])
@@ -98,10 +100,12 @@ class TemplatesHandler(JupyterHandler):
 
 
 class TemplateNamesHandler(JupyterHandler):
-    def initialize(self, loader):
+    def initialize(self, loader=None):
+        if loader is None:
+            raise ValueError("A template loader is required")
         self.loader = loader
 
-    def get(self):
+    def get(self, *args, **kwargs):
         templates, _ = self.loader.get_templates()
         response = {"templates": templates, "template_label": self.loader.template_label}
         self.finish(json.dumps(response))

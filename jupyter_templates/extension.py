@@ -85,14 +85,15 @@ class TemplatesLoader:
         return templates, template_by_path
 
 
+# Tornado annotates these overridable hooks as mutable Callable attributes.
 class TemplatesHandler(JupyterHandler):
-    def initialize(self, loader=None):
+    def initialize(self, loader=None):  # ty: ignore[invalid-mutable-override]
         if loader is None:
             raise ValueError("A template loader is required")
         self.loader = loader
 
     @tornado.web.authenticated
-    def get(self, *args, **kwargs):
+    def get(self, *args, **kwargs):  # ty: ignore[invalid-mutable-override]
         temp = self.get_argument("template", "")
         if temp:
             self.finish(self.loader.get_templates()[1][temp])
@@ -100,12 +101,12 @@ class TemplatesHandler(JupyterHandler):
 
 
 class TemplateNamesHandler(JupyterHandler):
-    def initialize(self, loader=None):
+    def initialize(self, loader=None):  # ty: ignore[invalid-mutable-override]
         if loader is None:
             raise ValueError("A template loader is required")
         self.loader = loader
 
-    def get(self, *args, **kwargs):
+    def get(self, *args, **kwargs):  # ty: ignore[invalid-mutable-override]
         templates, _ = self.loader.get_templates()
         response = {"templates": templates, "template_label": self.loader.template_label}
         self.finish(json.dumps(response))

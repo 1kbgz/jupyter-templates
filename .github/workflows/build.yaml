@@ -66,7 +66,11 @@ jobs:
         if: always()
 
       - name: Publish test results
+<<<<<<< before updating
         uses: EnricoMi/publish-unit-test-result-action@7622c5bf3d112a72ab4fa3951c2aa5723d8ab92d  # v2.25.0
+=======
+        uses:EnricoMi/publish-unit-test-result-action@7622c5bf3d112a72ab4fa3951c2aa5723d8ab92d  # v2.25.0
+>>>>>>> after updating
         with:
           files: '**/junit.xml'
 
